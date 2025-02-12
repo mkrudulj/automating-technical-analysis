@@ -14,7 +14,7 @@ def main(app_data):
 
     st.sidebar.subheader('Asset:')
     asset_options = sorted(['Cryptocurrency', 'Index Fund', 'Forex', 'Futures & Commodities', 'Stocks'])
-    asset = st.sidebar.selectbox('', asset_options, index = 4)
+    asset = st.sidebar.selectbox('', asset_options, index = 0)
 
     if asset in ['Index Fund', 'Forex', 'Futures & Commodities', 'Stocks']:
         exchange = 'Yahoo! Finance'
@@ -60,7 +60,7 @@ def main(app_data):
         markets = app_data.markets
         
         st.sidebar.subheader('Market:')
-        market = st.sidebar.selectbox('', markets, index = 3)
+        market = st.sidebar.selectbox('', markets, index = 4)
         app_data.market_data(market)
         assets = app_data.assets
         currency = app_data.currency
@@ -69,18 +69,18 @@ def main(app_data):
         equity = st.sidebar.selectbox('', assets)
 
         st.sidebar.subheader('Interval:')
-        interval = st.sidebar.selectbox('', ('1 Minute', '3 Minute', '5 Minute', '15 Minute', '30 Minute', '1 Hour', '6 Hour', '12 Hour', '1 Day', '1 Week'), index = 8)
+        interval = st.sidebar.selectbox('', ('1 Minute', '3 Minute', '5 Minute', '15 Minute', '30 Minute', '1 Hour', '6 Hour', '12 Hour', '1 Day', '1 Week'), index = 2)
 
-        volitility_index = 2 
+        volitility_index = 1 
         
     label = asset
         
     st.sidebar.subheader('Trading Volatility:')
     risk = st.sidebar.selectbox('', ('Low', 'Medium', 'High'), index = volitility_index)
 
-    st.title(f'Automated Technical Analysis.')
+    st.title(f'Automated Technical Analysis')
     st.subheader(f'{label} Data Sourced from {exchange}.')
-    st.info(f'Predicting...')
+    st.info(f'...')
     
     future_price = 1   
     analysis = Visualization(exchange, interval, equity, indication, action_model, price_model, market)
