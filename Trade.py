@@ -85,7 +85,7 @@ def main(app_data):
     future_price = 1   
     analysis = Visualization(exchange, interval, equity, indication, action_model, price_model, market)
     #analysis_day = Indications(exchange, '1 Day', equity, market)
-    analysis_day = Indications(exchange, interval, equity, market)
+    analysis_day = Indications(exchange, '1 Week', equity, market)
     requested_date = analysis.df.index[+1]
     
     st.write(analysis.df.index[+1])
