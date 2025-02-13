@@ -87,6 +87,7 @@ def main(app_data):
     analysis_day = Indications(exchange, '1 Day', equity, market)
     requested_date = analysis.df.index[-1]
     
+    st.write(analysis.df.index[-1])
     st.write(analysis.df)
 
     
