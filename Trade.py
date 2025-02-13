@@ -86,6 +86,10 @@ def main(app_data):
     analysis = Visualization(exchange, interval, equity, indication, action_model, price_model, market)
     analysis_day = Indications(exchange, '1 Day', equity, market)
     requested_date = analysis.df.index[-1]
+    
+    st.write(analysis.df)
+
+    
     current_price = float(analysis.df['Adj Close'][-1])
     change = float(analysis.df['Adj Close'].pct_change()[-1]) * 100
     requested_prediction_price = float(analysis.requested_prediction_price)
