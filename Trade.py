@@ -93,7 +93,7 @@ def main(app_data):
     
     st.write(analysis.df.sort_values(by='Date', ascending=False))
 
-'''    
+    '''    
     current_price = float(analysis.df['Adj Close'][-1])
     change = float(analysis.df['Adj Close'].pct_change()[-1]) * 100
     requested_prediction_price = float(analysis.requested_prediction_price)
@@ -161,7 +161,7 @@ def main(app_data):
 
     technical_analysis_fig = analysis.technical_analysis_graph()
     st.plotly_chart(technical_analysis_fig, use_container_width = True) 
- '''   
+    '''   
 
 if __name__ == '__main__':
     import warnings
