@@ -89,7 +89,9 @@ def main(app_data):
     requested_date = analysis.df.index[0]
     
     st.write(analysis.df.index[0])
-    st.write(analysis.df)
+
+    
+    st.write(analysis.df.sort_values(by='Date', ascending=False))
 
     
     current_price = float(analysis.df['Adj Close'][-1])
